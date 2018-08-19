@@ -16,7 +16,6 @@ import tech.tablesaw.columns.StringParser;
 import tech.tablesaw.columns.numbers.DoubleColumnType;
 import tech.tablesaw.columns.numbers.IntColumnType;
 import tech.tablesaw.columns.numbers.NumberColumnFormatter;
-import tech.tablesaw.columns.numbers.NumberIterator;
 
 public class IntColumn extends NumberColumn<Integer> implements NumericColumn<Integer>, CategoricalColumn<Integer> {
 
@@ -265,11 +264,6 @@ public class IntColumn extends NumberColumn<Integer> implements NumericColumn<In
     @Override
     public boolean isMissing(int rowNumber) {
         return isMissingValue(getInt(rowNumber));
-    }
-
-    @Override
-    public NumberIterator numberIterator() {
-        return new NumberIterator(data);
     }
 
     @Override
